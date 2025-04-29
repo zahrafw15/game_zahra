@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctgudv2dnavap"]
+
+[ext_resource type="Script" path="res://scripts/QuizPopup.gd" id="1_lvvwq"]
+
+[node name="QuizPopup" type="CanvasLayer"]
+script = ExtResource("1_lvvwq")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -364.0
+offset_top = -243.5
+offset_right = 364.0
+offset_bottom = 243.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelPertanyaan" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 47.5
+offset_right = 504.0
+offset_bottom = 169.5
+
+[node name="Jawaban1" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 267.5
+offset_right = 207.0
+offset_bottom = 309.5
+
+[node name="Jawaban2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 360.5
+offset_right = 207.0
+offset_bottom = 402.5
+
+[node name="Jawaban3" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 272.5
+offset_right = 535.0
+offset_bottom = 314.5
+
+[node name="Jawaban4" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 353.5
+offset_right = 545.0
+offset_bottom = 395.5

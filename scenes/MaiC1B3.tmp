@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://4u276ol7g31v"]
+
+[ext_resource type="Texture2D" uid="uid://ctxfyrvriej0m" path="res://assets/images/bg fixx.png" id="2_1klm6"]
+[ext_resource type="Texture2D" uid="uid://cljudd1ioatqs" path="res://assets/images/buttonplay.png" id="3_enta8"]
+[ext_resource type="Texture2D" uid="uid://b2k1f3uerunuu" path="res://assets/images/buttonmateri.png" id="4_3rcf1"]
+[ext_resource type="Texture2D" uid="uid://b45onf8ji33bq" path="res://assets/images/buttonpetunjuk.png" id="5_dkv5i"]
+[ext_resource type="Texture2D" uid="uid://bb5lejnnxs50b" path="res://assets/images/keluar.png" id="6_ybr5d"]
+
+[sub_resource type="GDScript" id="GDScript_0tsd4"]
+script/source = "extends Control
+
+@onready var tombol_permaian = $MarginContainer/HBoxContainer/VBoxContainer/Tombol_Permainan as Button
+@onready var tombol_materi = $MarginContainer/HBoxContainer/VBoxContainer/Tombol_Materi as Button
+@onready var tombol_petunjuk = $MarginContainer/HBoxContainer/VBoxContainer/Tombol_Petunjuk as Button
+
+@onready var tombol_exit = $Tombol_Exit as Button
+
+@onready var start_game = preload(\"res://scenes/Main.tscn\") as PackedScene
+@onready var material_screen = preload(\"res://scenes/MaterialScene.tscn\") as PackedScene
+@onready var petunjuk_screen = preload(\"res://scenes/PetunjukScene.tscn\") as PackedScene  # Untuk tombol petunjuk (opsional)
+
+func _ready():
+	tombol_permaian.button_down.connect(on_start_pressed)
+	tombol_materi.button_down.connect(on_material_pressed)
+	tombol_petunjuk.button_down.connect(on_petunjuk_pressed)
+	tombol_exit.button_down.connect(on_exit_pressed)
+
+func on_start_pressed() -> void:
+	get_tree().change_scene_to_packed(start_game)
+
+func on_material_pressed() -> void:
+	get_tree().change_scene_to_packed(material_screen)
+
+func on_petunjuk_pressed() -> void:
+	get_tree().change_scene_to_packed(petunjuk_screen)
+
+func on_exit_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="SystemFont" id="SystemFont_euuab"]
+font_names = PackedStringArray("Impact")
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_0tsd4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1klm6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(30, 120)
+layout_mode = 2
+
+[node name="Tombol_Permainan" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_euuab")
+theme_override_font_sizes/font_size = 30
+icon = ExtResource("3_enta8")
+
+[node name="Tombol_Materi" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_euuab")
+theme_override_font_sizes/font_size = 30
+icon = ExtResource("4_3rcf1")
+
+[node name="Tombol_Petunjuk" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_euuab")
+theme_override_font_sizes/font_size = 30
+icon = ExtResource("5_dkv5i")
+
+[node name="Tombol_Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1042.0
+offset_top = 610.0
+offset_right = 1193.0
+offset_bottom = 666.0
+icon = ExtResource("6_ybr5d")

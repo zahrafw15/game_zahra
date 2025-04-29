@@ -1,0 +1,124 @@
+[gd_scene load_steps=4 format=3 uid="uid://blgajo7c336p0"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_ppf4k"]
+[ext_resource type="Texture2D" uid="uid://cir4xowmbq0r8" path="res://assets/images/bg.png" id="2_7od6i"]
+[ext_resource type="Texture2D" uid="uid://i3bxegwea8sf" path="res://assets/images/papan.png" id="2_cjso3"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ppf4k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1282.0
+offset_bottom = 721.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7od6i")
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(680, 355)
+texture = ExtResource("2_cjso3")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TombolDadu" type="Button" parent="UI"]
+offset_left = 526.0
+offset_top = 440.0
+offset_right = 592.0
+offset_bottom = 493.0
+
+[node name="LabelUmpanBalik" type="Label" parent="UI"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 598.0
+offset_top = -198.0
+offset_right = 785.0
+offset_bottom = -108.0
+grow_vertical = 2
+
+[node name="Player1" type="Panel" parent="UI"]
+offset_left = 152.0
+offset_top = 63.0
+offset_right = 290.0
+offset_bottom = 186.0
+
+[node name="NamaPemain1" type="Label" parent="UI/Player1"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 110.0
+offset_bottom = 66.0
+
+[node name="PoinPemain1" type="Label" parent="UI/Player1"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 75.0
+offset_right = 110.0
+offset_bottom = 106.0
+
+[node name="Player2" type="Panel" parent="UI"]
+offset_left = 152.0
+offset_top = 519.0
+offset_right = 290.0
+offset_bottom = 642.0
+
+[node name="NamaPemain2" type="Label" parent="UI/Player2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 110.0
+offset_bottom = 66.0
+
+[node name="PoinPemain2" type="Label" parent="UI/Player2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 75.0
+offset_right = 110.0
+offset_bottom = 106.0
+
+[node name="Player3" type="Panel" parent="UI"]
+offset_left = 1072.0
+offset_top = 72.0
+offset_right = 1210.0
+offset_bottom = 195.0
+
+[node name="NamaPemain3" type="Label" parent="UI/Player3"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 110.0
+offset_bottom = 66.0
+
+[node name="PoinPemain3" type="Label" parent="UI/Player3"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 75.0
+offset_right = 110.0
+offset_bottom = 106.0
+
+[node name="Player4" type="Panel" parent="UI"]
+offset_left = 1072.0
+offset_top = 515.0
+offset_right = 1210.0
+offset_bottom = 638.0
+
+[node name="NamaPemain4" type="Label" parent="UI/Player4"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 110.0
+offset_bottom = 66.0
+
+[node name="PoinPemain4" type="Label" parent="UI/Player4"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 75.0
+offset_right = 110.0
+offset_bottom = 106.0

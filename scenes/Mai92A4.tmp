@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://blgajo7c336p0"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_ppf4k"]
+[ext_resource type="Texture2D" uid="uid://dr8t4albdbqjf" path="res://assets/images/petak.png" id="2_0nesu"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ppf4k")
+
+[node name="BoardSprite" type="Sprite2D" parent="."]
+position = Vector2(660, 366)
+texture = ExtResource("2_0nesu")
+
+[node name="Player1" type="Node2D" parent="."]
+position = Vector2(94, 110)
+
+[node name="Player2" type="Node2D" parent="."]
+position = Vector2(94, 162)
+
+[node name="Player3" type="Node2D" parent="."]
+position = Vector2(94, 218)
+
+[node name="Player4" type="Node2D" parent="."]
+position = Vector2(94, 272)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -37.5
+offset_right = 247.0
+offset_bottom = 37.5
+grow_vertical = 2
+
+[node name="DiceLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 46.0
+offset_right = 247.0
+offset_bottom = 121.0
+grow_vertical = 2
+
+[node name="QuestionLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 135.0
+offset_right = 247.0
+offset_bottom = 210.0
+grow_vertical = 2
+
+[node name="CardLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 227.0
+offset_right = 247.0
+offset_bottom = 302.0
+grow_vertical = 2
+
+[node name="RollButton" type="Button" parent="CanvasLayer"]
+offset_left = 1181.0
+offset_top = 310.0
+offset_right = 1247.0
+offset_bottom = 363.0
+
+[node name="Option1" type="Button" parent="CanvasLayer"]
+offset_left = 1181.0
+offset_top = 395.0
+offset_right = 1247.0
+offset_bottom = 448.0
+
+[node name="Option2" type="Button" parent="CanvasLayer"]
+offset_left = 1181.0
+offset_top = 478.0
+offset_right = 1247.0
+offset_bottom = 531.0
+
+[node name="Option3" type="Button" parent="CanvasLayer"]
+offset_left = 1181.0
+offset_top = 564.0
+offset_right = 1247.0
+offset_bottom = 617.0
+
+[node name="NextTurnButton" type="Button" parent="CanvasLayer"]
+offset_left = 1181.0
+offset_top = 647.0
+offset_right = 1247.0
+offset_bottom = 700.0
